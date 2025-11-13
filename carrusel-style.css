@@ -1,0 +1,453 @@
+
+@media (min-width: 1025px) {
+    .carrusel {
+        display: flex;
+        justify-content: flex-start;
+        gap: 30px;
+        padding: 30px 20px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+        scroll-behavior: smooth;
+    }
+    .carrusel::-webkit-scrollbar { height: 10px; }
+    .carrusel::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+    .carrusel::-webkit-scrollbar-thumb { background: #b22222; border-radius: 10px; }
+    .carrusel::-webkit-scrollbar-thumb:hover { background: #8b0000; }
+    .cajas {
+        position: relative;
+        width: 340px;
+        min-width: 340px;
+        height: 420px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 16px rgba(178, 34, 34, 0.15);
+        border-radius: 15px;
+        transition: all 0.3s ease-in-out;
+        flex-shrink: 0;
+    }
+    .cajas:hover {
+        transform: scale(1.08);
+        box-shadow: 0 8px 24px rgba(178, 34, 34, 0.25);
+        transition: 0.3s ease-in-out;
+    }
+    .cajas .imgBox,
+    .cajas .imgBox1,
+    .cajas .imgBox2,
+    .cajas .imgBox3,
+    .cajas .imgBox4,
+    .cajas .imgBox5 {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        background: crimson;
+        border-radius: 15px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0 -30px 40px rgba(0,0,0,0.2);
+    }
+    .cajas .imgBox::before,
+    .cajas .imgBox1::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: -10px 10px 0 #fff;
+    }
+    .cajas .imgBox::after,
+    .cajas .imgBox1::after {
+        content: '';
+        position: absolute;
+        bottom: 70px;
+        left: 0px;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: -10px 10px 0 #fff;
+    }
+    .cajas .contenido {
+        position: relative;
+        width: 100%;
+        height: 160px;
+        background: crimson;
+        border-radius: 15px;
+        border-top-left-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .cajas .contenido .precio {
+        position: absolute;
+        top: -85px;
+        height: 85px;
+        width: 55%;
+        background: crimson;
+        border-top: 10px solid #fff;
+        border-right: 10px solid #fff;
+        border-top-right-radius: 28px;
+        border-top-left-radius: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 15px;
+    }
+    .cajas .contenido .precio h2 {
+        color: white;
+        font-size: 1.1em;
+        margin: 0;
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.2;
+        list-style: none;
+    }
+    .cajas .contenido .precio h2::before,
+    .cajas .contenido .precio h2::after { content: none; }
+    .cajas .contenido .precio::before,
+    .cajas .contenido .precio::after { display: none; }
+    .cajas .contenido .info {
+        color: white;
+        text-align: center;
+        margin: 10px 0 5px 0;
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    .cajas .contenido .info h3 {
+        margin: 0 0 8px 0;
+        font-size: 1.8em;
+        font-weight: 900;
+        color: #fff;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .cajas .contenido .info p {
+        margin: 3px 0;
+        opacity: 0.95;
+        font-size: 0.95em;
+    }
+    .cajas .contenido .card-actions {
+        position: absolute;
+        bottom: 18px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 0 20px;
+    }
+    .cajas .contenido .card-actions button {
+        background: linear-gradient(90deg, #b22222 60%, #e74c3c 100%);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 22px;
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(.4,0,.2,1);
+        font-weight: 800;
+        font-size: 1em;
+        box-shadow: 0 4px 16px rgba(178,34,34,0.13);
+        letter-spacing: 0.5px;
+        outline: none;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .cajas .contenido .card-actions button:after {
+        content: '';
+        position: absolute;
+        left: 0; top: 0; right: 0; bottom: 0;
+        background: rgba(255,255,255,0.08);
+        opacity: 0;
+        transition: opacity 0.2s;
+        z-index: -1;
+    }
+    .cajas .contenido .card-actions button:hover:after { opacity: 1; }
+    .cajas .contenido .card-actions button:hover {
+        background: linear-gradient(90deg, #e74c3c 60%, #b22222 100%);
+        color: #fff;
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 8px 24px rgba(178,34,34,0.18);
+    }
+    .cajas .contenido .card-actions button.secondary {
+        background: #fff;
+        color: #b22222;
+        border: 2px solid #b22222;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(178,34,34,0.08);
+    }
+    .cajas .contenido .card-actions button.secondary:hover {
+        background: #f8f8f8;
+        color: #e74c3c;
+        border-color: #e74c3c;
+    }
+    .cajas .contenido .card-actions button.primary {
+        background: linear-gradient(90deg, #b22222 60%, #e74c3c 100%);
+        color: #fff;
+        font-weight: 800;
+    }
+}
+@media (max-width: 1024px) {
+    .carrusel { 
+        display: flex;
+        flex-wrap: nowrap; 
+        justify-content: flex-start; 
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 20px 15px;
+        gap: 20px;
+        -webkit-overflow-scrolling: touch; /* Suaviza scroll en iOS */
+    }
+    
+    /* Ocultar scrollbar pero mantener funcionalidad */
+    .carrusel::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    .carrusel::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    
+    .carrusel::-webkit-scrollbar-thumb {
+        background: #b22222;
+        border-radius: 10px;
+    }
+    
+    .carrusel::-webkit-scrollbar-thumb:hover {
+        background: #8b0000;
+    }
+    
+    .cajas { 
+        width: 280px; 
+        min-width: 280px; 
+        height: 360px;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+    .cajas .imgBox,
+    .cajas .imgBox1,
+    .cajas .imgBox2,
+    .cajas .imgBox3,
+    .cajas .imgBox4,
+    .cajas .imgBox5 { 
+        height: 200px; 
+    }
+    .cajas .contenido { 
+        height: 150px; 
+    }
+    .cajas .contenido .card-actions button {
+        padding: 10px 18px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 768px) {
+    .carrusel {
+        padding: 20px 10px;
+        gap: 20px;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        /* Centrar la primera tarjeta */
+        padding-left: calc((100vw - 260px) / 2);
+        padding-right: calc((100vw - 260px) / 2);
+    }
+    
+    /* Scrollbar más pequeña en móvil */
+    .carrusel::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .cajas { 
+        width: 260px; 
+        min-width: 260px;
+        height: 360px;
+        scroll-snap-align: center;
+        box-shadow: 0 6px 20px rgba(178, 34, 34, 0.2);
+    }
+    
+    .cajas .imgBox,
+    .cajas .imgBox1,
+    .cajas .imgBox2,
+    .cajas .imgBox3,
+    .cajas .imgBox4,
+    .cajas .imgBox5 { 
+        height: 190px; 
+    }
+    
+    .cajas .contenido { 
+        height: 160px; 
+    }
+    
+    .cajas .contenido .precio {
+        top: -70px;
+        height: 70px;
+        width: 55%;
+    }
+    
+    .cajas .contenido .precio h2 {
+        font-size: 0.95em;
+    }
+    
+    .cajas .contenido .info {
+        padding: 0 12px;
+        margin-top: 5px;
+    }
+    
+    .cajas .contenido .info h3 {
+        font-size: 1.4em;
+        margin-bottom: 6px;
+    }
+    
+    .cajas .contenido .info p {
+        font-size: 0.85em;
+        margin: 2px 0;
+    }
+    
+    .cajas .contenido .card-actions {
+        gap: 10px;
+        padding: 0 15px;
+        bottom: 15px;
+    }
+    
+    .cajas .contenido .card-actions button {
+        background: linear-gradient(90deg, #b22222 60%, #e74c3c 100%);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 0.8em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 700;
+        box-shadow: 0 3px 10px rgba(178,34,34,0.2);
+    }
+    
+    .cajas .contenido .card-actions button:hover {
+        background: linear-gradient(90deg, #e74c3c 60%, #b22222 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(178,34,34,0.3);
+    }
+    
+    .cajas .contenido .card-actions button.secondary {
+        background: #fff;
+        color: #b22222;
+        border: 2px solid #b22222;
+        font-weight: 700;
+        box-shadow: 0 2px 6px rgba(178,34,34,0.1);
+    }
+    
+    .cajas .contenido .card-actions button.secondary:hover {
+        background: #f8f8f8;
+        color: #e74c3c;
+        border-color: #e74c3c;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrusel {
+        padding: 20px 5px;
+        gap: 15px;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        /* Centrar la primera tarjeta en pantallas pequeñas */
+        padding-left: calc((100vw - 240px) / 2);
+        padding-right: calc((100vw - 240px) / 2);
+    }
+    
+    /* Scrollbar muy pequeña en móviles pequeños */
+    .carrusel::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .cajas { 
+        width: 240px; 
+        min-width: 240px;
+        height: 340px;
+        scroll-snap-align: center;
+        box-shadow: 0 6px 18px rgba(178, 34, 34, 0.2);
+    }
+    
+    .cajas .imgBox,
+    .cajas .imgBox1,
+    .cajas .imgBox2,
+    .cajas .imgBox3,
+    .cajas .imgBox4,
+    .cajas .imgBox5 { 
+        height: 170px; 
+    }
+    
+    .cajas .contenido { 
+        height: 160px; 
+    }
+    
+    .cajas .contenido .precio {
+        width: 55%;
+        height: 65px;
+        top: -65px;
+    }
+    
+    .cajas .contenido .precio h2 {
+        font-size: 0.9em;
+        padding: 0 8px;
+    }
+    
+    .cajas .contenido .info {
+        padding: 0 10px;
+        margin-top: 5px;
+    }
+    
+    .cajas .contenido .info h3 {
+        font-size: 1.3em;
+        margin-bottom: 5px;
+    }
+    
+    .cajas .contenido .info p {
+        font-size: 0.8em;
+        margin: 2px 0;
+    }
+    
+    .cajas .contenido .card-actions {
+        gap: 8px;
+        padding: 0 12px;
+        bottom: 12px;
+    }
+    
+    .cajas .contenido .card-actions button {
+        background: linear-gradient(90deg, #b22222 60%, #e74c3c 100%);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 7px 10px;
+        font-size: 0.75em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(178,34,34,0.2);
+    }
+    
+    .cajas .contenido .card-actions button:hover {
+        background: linear-gradient(90deg, #e74c3c 60%, #b22222 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(178,34,34,0.3);
+    }
+    
+    .cajas .contenido .card-actions button.secondary {
+        background: #fff;
+        color: #b22222;
+        border: 2px solid #b22222;
+        font-weight: 700;
+        box-shadow: 0 2px 6px rgba(178,34,34,0.1);
+    }
+    
+    .cajas .contenido .card-actions button.secondary:hover {
+        background: #f8f8f8;
+        color: #e74c3c;
+        border-color: #e74c3c;
+    }
+}

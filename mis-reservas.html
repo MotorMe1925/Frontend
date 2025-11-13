@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Reservas | Motor Me</title>
+    <link rel="icon" type="image/png" href="Img/2.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/69787b71b1.js" crossorigin="anonymous"></script>
+</head>
+<body data-page="mis-reservas">
+    <header class="encabezado">
+        <div class="Logo-pagina">
+            <a class="logo" href="index.html" aria-label="Ir al inicio">
+                <img src="Img/2.png" alt="MotorMe logo">
+            </a>
+        </div>
+        <div class="header-right">
+            <!-- Botón Ingresar o Usuario logueado (visible siempre en móvil) -->
+            <div id="user-status-mobile" class="user-status-mobile">
+                <a href="login.html" class="login-btn-mobile"><span>Ingresar</span></a>
+            </div>
+            <!-- Botón hamburguesa para móviles -->
+            <button class="hamburger-menu" aria-label="Menú" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav id="main-nav">
+            <a href="catalogo.html"><span>Catálogo</span></a>
+            <a href="publicar.html"><span>Publicar</span></a>
+            <a href="mis-reservas.html"><span>Mi Panel</span></a>
+            <a href="contactenos.html"><span>Contactenos</span></a>
+        </nav>
+    </header>
+    <main>
+        <section class="panel-section" style="max-width:800px;margin:0 auto;">
+            <h1 style="margin-bottom:32px;color:#b22222;text-align:center;">Mi Panel</h1>
+            <div class="panel-block" style="background:#fff7f7;border-radius:16px;box-shadow:0 2px 12px #e74c3c22;padding:24px 18px;margin-bottom:32px;">
+                <h2 style="color:#b22222;margin-bottom:18px;">Mis Publicaciones</h2>
+                <div id="publicaciones-list"></div>
+            </div>
+            <div class="panel-block" style="background:#f0fff4;border-radius:16px;box-shadow:0 2px 12px #28a74522;padding:24px 18px;margin-bottom:32px;">
+                     <h2 style="color:#28a745;margin-bottom:18px;">💰 Reservas Recibidas</h2>
+                     <p style="font-size:0.9rem;color:#666;margin-bottom:16px;">Órdenes de usuarios que han reservado tus vehículos. Aquí puedes gestionar el estado de cada reserva.</p>
+                     <div id="ventas-list"></div>
+            </div>
+            <div class="panel-block" style="background:#f7faff;border-radius:16px;box-shadow:0 2px 12px #b2222222;padding:24px 18px;">
+                    <h2 style="color:#1a4c7c;margin-bottom:18px;">Mis Reservas</h2>
+                    <div id="reservas-list"></div>
+            </div>
+        </section>
+    </main>
+    <script src="global-functions.js"></script>
+    <script src="mis-reservas.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Toggle menú hamburguesa
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.querySelector('.hamburger-menu');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('header nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('main-nav');
+                const hamburger = document.querySelector('.hamburger-menu');
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Cerrar menú al hacer clic fuera de él
+        document.addEventListener('click', (e) => {
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.querySelector('.hamburger-menu');
+            if (!nav.contains(e.target) && !hamburger.contains(e.target) && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+    <footer class="footer-motorme">
+      <div class="footer-container">
+        <div class="footer-logo-contact">
+          <img src="Img/2.png" alt="MotorMe logo" class="footer-logo" />
+          <div class="footer-contact">
+            <p><strong>Correo:</strong> info@motorme.com</p>
+            <p><strong>Certificaciones:</strong> ISO 9001, ISO 14001</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="X" class="footer-social-link"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="TikTok" class="footer-social-link"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="footer-legal">
+          <a href="#" class="footer-link">Políticas de privacidad</a>
+          <span class="footer-divider">|</span>
+          <span>MotorMe &copy; 2025</span>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

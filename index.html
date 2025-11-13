@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotorMe | Vende y reserva vehículos para compra</title>
+    <link rel="icon" type="image/png" href="Img/2.png">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="carrusel-style.css">
+        <link rel="stylesheet" href="filtros-style.css">
+        <script src="https://kit.fontawesome.com/69787b71b1.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+
+        <header class="encabezado">
+                <div class="Logo-pagina">
+                    <button class="logo" type="button" aria-label="Ir al inicio">
+                        <img src="Img/2.png" alt="MotorMe logo">
+                    </button>
+                </div>
+                <div class="header-right">
+                    <!-- Botón Ingresar o Usuario logueado (visible siempre en móvil) -->
+                    <div id="user-status-mobile" class="user-status-mobile">
+                        <a href="login.html" class="login-btn-mobile"><span>Ingresar</span></a>
+                    </div>
+                    <!-- Botón hamburguesa para móviles -->
+                    <button class="hamburger-menu" aria-label="Menú" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+    <nav id="main-nav">
+                                        <a href="catalogo.html"><span id="comprar">Catálogo</span></a>
+                                        <a href="publicar.html"><span id="vender">Publicar</span></a>
+                                        <a href="mis-reservas.html"><span id="panel">Mi Panel</span></a>
+                    <a href="contactenos.html"><span id="servicios">Contactenos</span></a>
+    </nav>
+        </header>
+        <main>
+            <h1 style="color:#b22222;font-size:2em;text-align:center;margin:32px 0 12px 0;letter-spacing:2px;font-weight:900;text-shadow:0 2px 12px #b2222222;">Productos destacados</h1>
+            
+            <div id="carrusel-dinamico"></div>
+            
+            <hr>
+            <div class="filtros-resultados-container">
+                <section id="filtros" class="filtros-panel">
+                    <h3>Filtrar Vehículos</h3>
+                    <div class="filtros-content">
+                        <div class="filtro-grupo">
+                            <h4>Tipo de Vehículo</h4>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="tipo" value="carro"> Carro</label>
+                                <label><input type="checkbox" name="tipo" value="moto"> Moto</label>
+                                <label><input type="checkbox" name="tipo" value="camioneta"> Camioneta</label>
+                                <label><input type="checkbox" name="tipo" value="van"> Van</label>
+                            </div>
+                        </div>
+                        <div class="filtro-grupo">
+                            <h4>Marca</h4>
+                            <select id="marca" class="select-filtro">
+                                <option value="">Todas las marcas</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="mazda">Mazda</option>
+                                <option value="honda">Honda</option>
+                                <option value="ford">Ford</option>
+                                <option value="chevrolet">Chevrolet</option>
+                            </select>
+                        </div>
+                        <div class="filtro-grupo">
+                            <h4>Rango de Precio</h4>
+                            <div class="precio-range">
+                                <input type="number" id="precio-min" placeholder="Mínimo" class="precio-input" min="0">
+                                <span>-</span>
+                                <input type="number" id="precio-max" placeholder="Máximo" class="precio-input" min="0">
+                            </div>
+                        </div>
+                        <div class="filtro-grupo">
+                            <h4>Año</h4>
+                            <select id="ano" class="select-filtro">
+                                <option value="">Todos los años</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2016">2016</option>
+                            </select>
+                        </div>
+                        <div class="filtros-botones">
+                            <button id="aplicar-filtros" class="btn-filtro">Aplicar Filtros</button>
+                            <button id="limpiar-filtros" class="btn-filtro">Limpiar Filtros</button>
+                        </div>
+                    </div>
+                </section>
+                <section id="resultados" class="resultados-panel">
+                    <h3>Resultados</h3>
+                    <div id="resultados-grid" class="resultados-grid"></div>
+                </section>
+            </div>
+        </main>
+        <footer class="footer-motorme">
+  <div class="footer-container">
+    <div class="footer-logo-contact">
+      <img src="Img/2.png" alt="MotorMe logo" class="footer-logo" />
+      <div class="footer-contact">
+        <p><strong>Correo:</strong> info@motorme.com</p>
+        <p><strong>Certificaciones:</strong> ISO 9001, ISO 14001</p>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="X" class="footer-social-link"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" aria-label="TikTok" class="footer-social-link"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <div class="footer-legal">
+      <a href="#" class="footer-link">Políticas de privacidad</a>
+      <span class="footer-divider">|</span>
+      <span>MotorMe &copy; 2025</span>
+    </div>
+  </div>
+</footer>
+        
+    <script src="global-functions.js"></script>
+    <script src="carrusel-dinamico.js"></script>
+    <script src="index-filtros.js"></script>
+    <script type="module" src="script.js"></script>
+    
+    <script>
+        // Toggle menú hamburguesa
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.querySelector('.hamburger-menu');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('header nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('main-nav');
+                const hamburger = document.querySelector('.hamburger-menu');
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Cerrar menú al hacer clic fuera de él
+        document.addEventListener('click', (e) => {
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.querySelector('.hamburger-menu');
+            if (!nav.contains(e.target) && !hamburger.contains(e.target) && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+
+    </body>
+
+</html>

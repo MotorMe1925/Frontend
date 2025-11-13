@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Publicar Vehículo</title>
+		<link rel="icon" type="image/png" href="Img/2.png" />
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="styleV.css" />
+		<script src="https://kit.fontawesome.com/69787b71b1.js" crossorigin="anonymous"></script>
+	</head>
+	<body data-page="publicar">
+		<header class="encabezado">
+			<div class="Logo-pagina">
+				<a class="logo" href="index.html" aria-label="Ir al inicio">
+					<img src="Img/2.png" alt="MotorMe logo" />
+				</a>
+			</div>
+			<div class="header-right">
+				<!-- Botón Ingresar o Usuario logueado (visible siempre en móvil) -->
+				<div id="user-status-mobile" class="user-status-mobile">
+					<a href="login.html" class="login-btn-mobile"><span>Ingresar</span></a>
+				</div>
+				<!-- Botón hamburguesa para móviles -->
+				<button class="hamburger-menu" aria-label="Menú" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+			<nav id="main-nav">
+				<a href="catalogo.html"><span>Catálogo</span></a>
+				<a href="publicar.html"><span>Publicar</span></a>
+				<a href="mis-reservas.html"><span>Mi Panel</span></a>
+				<a href="contactenos.html"><span>Contactenos</span></a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="ventas-hero">
+				<h1>Publica tu vehículo</h1>
+				<p>Completa la información del vehículo y sube fotos para publicar tu anuncio.</p>
+			</section>
+
+			<section class="sell-form-section">
+				<form id="sellForm" class="sell-form" enctype="multipart/form-data" novalidate>
+					<fieldset>
+						<legend>Datos del vehículo</legend>
+						<div class="row">
+							<div class="field">
+								<label for="titulo">Título del anuncio <span class="required">*</span></label>
+								<input id="titulo" name="titulo" type="text" placeholder="Ej: Toyota Prado 2018" required />
+							</div>
+							<div class="field">
+								<label for="precio">Precio (COP) <span class="required">*</span></label>
+								<input id="precio" name="precio" type="number" min="0" step="0.01" placeholder="0.00" required />
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="field">
+								<label for="tipo">Tipo</label>
+								<select id="tipo" name="tipo">
+									<option value="Carro">Carro</option>
+									<option value="Moto">Moto</option>
+									<option value="Camioneta">Camioneta</option>
+									<option value="Van">Van</option>
+								</select>
+							</div>
+							<div class="field">
+								<label for="modelo">Marca / Modelo</label>
+								<input id="modelo" name="modelo" type="text" placeholder="Toyota Prado" />
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="field">
+								<label for="anio">Año</label>
+								<input id="anio" name="anio" type="number" min="1900" max="2099" step="1" placeholder="2018" />
+							</div>
+							<div class="field">
+								<label for="kilometraje">Kilometraje (km)</label>
+								<input id="kilometraje" name="kilometraje" type="number" min="0" placeholder="120000" />
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="field">
+								<label for="transmision">Transmisión</label>
+								<select id="transmision" name="transmision">
+									<option value="Manual">Manual</option>
+									<option value="Automatica">Automática</option>
+								</select>
+							</div>
+							<div class="field">
+								<label for="combustible">Combustible</label>
+								<select id="combustible" name="combustible">
+									<option value="Gasolina">Gasolina</option>
+									<option value="Diesel">Diésel</option>
+									<option value="Híbrido">Híbrido</option>
+									<option value="Eléctrico">Eléctrico</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="field full">
+							<label for="descripcion">Descripción</label>
+							<textarea id="descripcion" name="descripcion" rows="4" placeholder="Agrega detalles importantes: estado, extras, revisiones..."></textarea>
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<legend>Fotos del vehículo</legend>
+						<div class="field full">
+							<label for="fotos">Subir fotos (mínimo 1, máximo 8)</label>
+							<input id="fotos" name="fotos" type="file" accept="image/*" multiple />
+							<div id="preview" class="preview-grid"></div>
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<legend>Contacto</legend>
+						<div class="row">
+							<div class="field">
+								<label for="nombre">Nombre</label>
+								<input id="nombre" name="nombre" type="text" placeholder="Tu nombre" />
+							</div>
+							<div class="field">
+								<label for="telefono">Teléfono</label>
+								<input id="telefono" name="telefono" type="tel" placeholder="3123456789" />
+							</div>
+						</div>
+						<div class="field full">
+							<label for="email">Correo electrónico</label>
+							<input id="email" name="email" type="email" placeholder="correo@ejemplo.com" />
+						</div>
+					</fieldset>
+
+					<div class="actions">
+						<label class="checkbox"><input type="checkbox" id="confirm" required /> Confirmo que la información es verídica</label>
+						<button type="submit" class="submit-btn">Publicar anuncio</button>
+					</div>
+				</form>
+			</section>
+		</main>
+
+		<footer class="footer-motorme">
+  <div class="footer-container">
+    <div class="footer-logo-contact">
+      <img src="Img/2.png" alt="MotorMe logo" class="footer-logo" />
+      <div class="footer-contact">
+        <p><strong>Correo:</strong> info@motorme.com</p>
+        <p><strong>Certificaciones:</strong> ISO 9001, ISO 14001</p>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="X" class="footer-social-link"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" aria-label="TikTok" class="footer-social-link"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <div class="footer-legal">
+      <a href="#" class="footer-link">Políticas de privacidad</a>
+      <span class="footer-divider">|</span>
+      <span>MotorMe &copy; 2025</span>
+    </div>
+  </div>
+</footer>
+
+		<script src="global-functions.js"></script>
+		<script src="publicar.js"></script>
+		<script src="script.js"></script>
+		
+		<script>
+			// Toggle menú hamburguesa
+			function toggleMenu() {
+				const nav = document.getElementById('main-nav');
+				const hamburger = document.querySelector('.hamburger-menu');
+				nav.classList.toggle('active');
+				hamburger.classList.toggle('active');
+			}
+			
+			// Cerrar menú al hacer clic en un enlace
+			document.querySelectorAll('header nav a').forEach(link => {
+				link.addEventListener('click', () => {
+					const nav = document.getElementById('main-nav');
+					const hamburger = document.querySelector('.hamburger-menu');
+					nav.classList.remove('active');
+					hamburger.classList.remove('active');
+				});
+			});
+			
+			// Cerrar menú al hacer clic fuera de él
+			document.addEventListener('click', (e) => {
+				const nav = document.getElementById('main-nav');
+				const hamburger = document.querySelector('.hamburger-menu');
+				if (!nav.contains(e.target) && !hamburger.contains(e.target) && nav.classList.contains('active')) {
+					nav.classList.remove('active');
+					hamburger.classList.remove('active');
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,718 @@
+/* === FOOTER MODERNO MOTOR ME === */
+.footer-motorme {
+    background: linear-gradient(90deg, #b22222 60%, #e74c3c 100%);
+    color: #fff;
+    padding: 40px 0 20px 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    box-shadow: 0 -2px 16px #b2222222;
+    margin-top: 48px;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 0 24px;
+}
+.footer-logo-contact {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #fff3;
+    background: #fff;
+    object-fit: contain;
+}
+.footer-contact {
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+.footer-contact strong {
+    color: #ffe082;
+}
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.footer-social-link {
+    color: #fff;
+    font-size: 1.7em;
+    background: #b22222;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px #fff3;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    border: 2px solid #fff3;
+}
+.footer-social-link:hover {
+    background: #fff;
+    color: #b22222;
+    transform: scale(1.12) rotate(-8deg);
+}
+.footer-legal {
+    width: 100%;
+    text-align: center;
+    margin-top: 32px;
+    font-size: 1em;
+    color: #ffe082;
+    letter-spacing: 1px;
+}
+.footer-link {
+    color: #fff;
+    text-decoration: underline;
+    margin: 0 8px;
+    font-weight: 500;
+}
+.footer-divider {
+    color: #fff8;
+    margin: 0 8px;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 0 8px;
+    }
+    .footer-logo {
+        width: 48px;
+        height: 48px;
+    }
+    .footer-legal {
+        margin-top: 18px;
+        font-size: 0.95em;
+    }
+}
+/* ===== ESTILOS BASE - Aplicables a TODOS los tamaños ===== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body{
+    background: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.encabezado{
+    background-color: rgb(80, 77, 77);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+}
+
+/* Contenedor derecho para botón login y hamburguesa */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Contenedor status usuario móvil - oculto en desktop */
+.user-status-mobile {
+    display: none;
+}
+
+.login-btn-mobile {
+    color: white;
+    text-decoration: none;
+    background-color: firebrick;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.login-btn-mobile:hover {
+    background-color: darkred;
+}
+
+/* Botón hamburguesa - oculto en desktop */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+header nav{
+    display: flex;
+    gap: 20px;
+}
+
+header nav a{
+    color: white;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+header nav a:hover{
+    color: crimson;
+}
+
+.logo{
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.logo img{
+    width: 70px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    display: block;
+}
+
+#login{
+    background-color: firebrick;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+#login:hover{
+    background-color: darkred;
+    color: white;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 15px 30px;
+}
+
+h2{
+    color: white;
+}
+
+footer{
+    background-color: rgb(80, 77, 77);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Filtros globales */
+.filtros-botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-filtro {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#aplicar-filtros {
+    background-color: #007bff;
+    color: white;
+}
+
+#aplicar-filtros:hover {
+    background-color: #0056b3;
+}
+
+#limpiar-filtros {
+    background-color: #6c757d;
+    color: white;
+}
+
+#limpiar-filtros:hover {
+    background-color: #545b62;
+}
+
+/* ===== ESTILOS ESPECÍFICOS PARA DESKTOP (1025px+) ===== */
+@media (min-width: 1025px){
+    main{
+        padding: 10px 30px 30px;
+    }
+
+    /* Estilos para la información del vehículo */
+    .cajas .contenido .info {
+        color: white;
+        text-align: center;
+        margin: 5px 0;
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .cajas .contenido .info h3 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .cajas .contenido .info p {
+        margin: 2px 0;
+        opacity: 0.9;
+    }
+
+    /* Estilos para los botones del carrusel */
+    .cajas .contenido .card-actions {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    .cajas .contenido .card-actions button {
+        background-color: firebrick;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 15px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .cajas .contenido .card-actions button:hover {
+        background-color: darkred;
+    }
+
+    .carrusel{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .cajas{
+        position: relative;
+        width: 320px;
+        height: 400px;
+        /* background-color: #ff0; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .cajas .imgBox1{
+        position: relative;
+        width: 100%;
+        height: 240px;
+        background: crimson;
+        border-radius: 15px;
+        background: url(https://tse1.mm.bing.net/th/id/OIP.KvAytdKjabOSAqDvEW5uiQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3);
+        background-size: cover;
+    }
+
+    .cajas:hover{
+        transform: scale(1.05);
+        transition: 0.3s ease-in-out;
+    }
+
+    .cajas .imgBox2{
+        position: relative;
+        width: 100%;
+        height: 240px;
+        background: crimson;
+        border-radius: 15px;
+        background: url(https://pluralidadz.com/wp-content/uploads/2024/07/Mazda-3-GRAND-TOURING-LX-CARBON-EDITION.webp);
+        background-size: cover;
+    }
+
+    .cajas .imgBox3{
+        position: relative;
+        width: 100%;
+        height: 240px;
+        background: crimson;
+        border-radius: 15px;
+        background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Terenure%2C_Co._Dublin_-_Ireland_%286018047588%29.jpg/1200px-Terenure%2C_Co._Dublin_-_Ireland_%286018047588%29.jpg);
+        background-size: cover;
+    }
+
+    .cajas .imgBox4{
+        position: relative;
+        width: 100%;
+        height: 240px;
+        background: crimson;
+        border-radius: 15px;
+        background: url(https://usaditoscars.com/wp-content/uploads/2021/07/Modelos-de-Volkswagen-Nuevo-escarabajo.jpg);
+        background-size: cover;
+    }
+
+    .cajas .imgBox5{
+        position: relative;
+        width: 100%;
+        height: 240px;
+        background: crimson;
+        border-radius: 15px;
+        background: url(https://chileautos.pxcrush.net/chileautos/cars/private/8e4raskde1om2s8zo1ig77v5j.jpg?pxc_method=fitfill&pxc_bgtype=self&height=725&width=1087);
+        background-size: cover;
+    }
+
+    .cajas .imgBox1::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: -10px 10px 0 #fff;
+    }
+
+    .cajas .imgBox1::after{
+        content: '';
+        position: absolute;
+        bottom: 70px;
+        left: 0px;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: -10px 10px 0 #fff;
+    }
+
+    .cajas .contenido{
+        position: relative;
+        width: 100%;
+        height: 150px;
+        background: crimson;
+        border-radius: 15px;
+        border-top-left-radius: 0;
+    }
+
+    .cajas .contenido .precio{
+        position: absolute;
+        top: -80px;
+        height: 80px;
+        width: 50%;
+        background: crimson;
+        border-top: 10px solid #fff;
+        border-right: 10px solid #fff;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        
+    }
+    /* aqui hay un PROBLEMAAAA */
+    /* trabajar en la estructura, como queremos la interfaz, trabajar el logueo */
+    .cajas .contenido .precio::before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: -10px -10px 10 #fff;
+    }
+
+    .cajas .contenido .precio::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: -25px;
+        width: 25px;
+        height: 25px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: -10px 10px 0 crimson;
+    }
+
+     /* Estilos para la sección de filtros */
+    .filtros-container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin: 20px auto;
+        max-width: 1200px;
+    }
+
+    .filtros-container h3 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .filtros-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .filtro-grupo {
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+
+    .filtro-grupo h4 {
+        color: #555;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .opciones {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .opciones label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #666;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .opciones input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .select-filtro {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: white;
+        color: #333;
+    }
+
+    .precio-range {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .precio-input {
+        width: calc(50% - 10px);
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .filtros-botones {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .btn-filtro {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    #aplicar-filtros {
+        background-color: #007bff;
+        color: white;
+    }
+
+    #aplicar-filtros:hover {
+        background-color: #0056b3;
+    }
+
+    #limpiar-filtros {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    #limpiar-filtros:hover {
+        background-color: #545b62;
+    }
+
+
+    h2{
+        color: white;
+    }
+
+    .ofertas{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+    }
+    .ofertasCaja{
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px gray;
+        padding: 0;
+        height: 350px;
+        width: 280px;
+    }
+    footer{
+        background-color: rgb(80, 77, 77);
+        color: white;
+        padding: 10px;
+        width: 100%;
+    }
+
+}
+
+/* Responsive para móviles - NO tocar desktop */
+@media (max-width: 768px){
+    /* Mostrar botón hamburguesa y status usuario */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    .user-status-mobile {
+        display: block;
+    }
+    
+    /* Ocultar COMPLETAMENTE el login del menú hamburguesa */
+    header nav .login-desktop,
+    header nav a[href="login.html"],
+    header nav .user-menu-wrap {
+        display: none !important;
+    }
+    
+    /* Header más compacto */
+    .encabezado{
+        padding: 10px 15px;
+    }
+    
+    .Logo-pagina .logo img{
+        width: 50px;
+    }
+    
+    /* Nav oculto por defecto en móvil */
+    header nav{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: rgb(80, 77, 77);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 30px 30px;
+        gap: 20px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+    
+    header nav.active {
+        right: 0;
+    }
+    
+    header nav a{
+        font-size: 1.1em;
+        padding: 12px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    header nav a span{
+        white-space: nowrap;
+    }
+    
+    /* Main con menos padding */
+    main{
+        padding: 10px 15px 30px;
+    }
+    
+    /* Título principal más pequeño */
+    main h1{
+        font-size: 1.5em !important;
+        margin: 20px 0 10px 0 !important;
+    }
+    
+    /* Footer más compacto */
+    footer{
+        padding: 15px 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px){
+    /* Header aún más compacto */
+    .encabezado{
+        padding: 8px 12px;
+    }
+    
+    .Logo-pagina .logo img{
+        width: 45px;
+    }
+    
+    /* Nav más estrecho en pantallas muy pequeñas */
+    header nav{
+        width: 80%;
+        padding: 70px 20px 20px;
+    }
+    
+    header nav a{
+        font-size: 1em;
+        padding: 10px 0;
+    }
+    
+    main h1{
+        font-size: 1.3em !important;
+    }
+}
+

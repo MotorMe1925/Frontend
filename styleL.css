@@ -1,0 +1,178 @@
+:root{
+	--main-c: #f14747;
+	--bg: linear-gradient(180deg, #f8dfdf 0%, #fff 100%);
+	--card-bg: #ffffff;
+	--text-dark: #222;
+	--accent: #de3b2f;
+}
+
+*{ box-sizing: border-box; }
+body{ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: var(--bg); color: var(--text-dark); }
+
+.login-container{
+	max-width: 420px;
+	margin: 6rem auto;
+	background: var(--card-bg);
+	padding: 2.25rem;
+	border-radius: 12px;
+	box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+	text-align: left;
+}
+.login-container h1{ text-align:center; margin-bottom: 1rem; font-size: 1.5rem; }
+
+.login-container .field{ 
+    margin-bottom: 1rem;
+ }
+.login-container label{
+     display:block; font-size: .95rem; margin-bottom: .35rem; color: #444; 
+    }
+.login-container input[type="email"],
+.login-container input[type="password"]{
+	width: 100%; padding: .65rem .75rem; border-radius: 8px; border: 1px solid #f79393; font-size: 1rem;
+}
+.login-container input:focus{
+     outline: none; border-color: var(--main-c); box-shadow: 0 0 0 4px rgba(255,195,0,0.08); 
+    }
+
+.actions{
+     display:flex; gap:.5rem; align-items:center; justify-content:space-between; margin-top: .5rem; 
+    }
+.btn{
+     display:inline-block; padding:.55rem .9rem; border-radius:8px; text-decoration:none; text-align:center; cursor:pointer; 
+    }
+.btn-primary{
+     background: var(--main-c); color:#fff; border: none; font-weight:600; 
+    }
+.btn-primary:hover{
+     filter:brightness(.95); }
+.btn-link{
+     background:transparent; color:var(--accent); border:none; font-weight:600; 
+    }
+
+.message{ 
+    margin-top: .9rem; min-height: 1.2rem; font-size: .95rem; 
+}
+.message.error{ 
+    color: #b00020; }
+.message.success{
+     color: #0a7a11; }
+
+@media (max-width:600px){
+	.login-container{ margin: 3rem 1rem; padding: 1.25rem; }
+	.actions{ flex-direction: column; gap:.5rem; }
+}
+
+header{ height: 60px; }
+
+
+.logo{
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+.logo img{
+    width: 70px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.45);
+    display: block;
+}
+
+.register-modal{ 
+    position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 9999; 
+}
+.register-modal.active{
+     display: flex; }
+.modal-backdrop{
+     position: absolute; inset: 0; background: rgba(0,0,0,0.45); 
+    }
+.modal-card{ 
+    position: relative; background: #fff; width: 100%; max-width: 520px; padding: 1.25rem 1.5rem; border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2; 
+}
+.modal-card h2{
+     margin: 0 0 0.75rem 0; text-align: left; 
+    }
+.modal-close{
+     position: absolute; top: 10px; right: 12px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; 
+    }
+.register-modal .field{ 
+    margin-bottom: .75rem; 
+}
+.register-modal input{ 
+    width: 100%; padding: .5rem .65rem; border-radius: 6px; border:1px solid #ddd; 
+}
+.register-modal .actions{
+     display:flex; gap:.5rem; justify-content:flex-end; margin-top: .5rem; 
+    }
+.register-modal .btn-link{
+     background:transparent; color:var(--text-dark); 
+    }
+.register-modal .message{ 
+    min-height: 1.1rem; 
+}
+
+@media (max-width:600px){
+	.modal-card{ margin: 0 12px; padding: 1rem; }
+}
+
+
+
+:root {
+  --main-c: #f14747;
+  --bg: linear-gradient(180deg, #f8dfdf 0%, #fff 100%);
+  --card-bg: #ffffff;
+  --text-dark: #222;
+  --accent: #de3b2f;
+}
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: var(--bg); color: var(--text-dark); }
+
+.login-container {
+  max-width: 420px;
+  margin: 6rem auto;
+  background: var(--card-bg);
+  padding: 2.25rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  text-align: left;
+}
+.login-container h1 { text-align: center; margin-bottom: 1rem; font-size: 1.5rem; }
+.login-container .field { margin-bottom: 1rem; }
+.login-container label { display: block; font-size: .95rem; margin-bottom: .35rem; color: #444; }
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 100%; padding: .65rem .75rem; border-radius: 8px; border: 1px solid #f79393; font-size: 1rem;
+}
+.login-container input:focus { outline: none; border-color: var(--main-c); box-shadow: 0 0 0 4px rgba(255,195,0,0.08); }
+.actions { display: flex; gap: .5rem; align-items: center; justify-content: space-between; margin-top: .5rem; }
+.btn { display: inline-block; padding: .55rem .9rem; border-radius: 8px; text-decoration: none; text-align: center; cursor: pointer; }
+.btn-primary { background: var(--main-c); color: #fff; border: none; font-weight: 600; }
+.btn-primary:hover { filter: brightness(.95); }
+.btn-link { background: transparent; color: var(--accent); border: none; font-weight: 600; }
+.message { margin-top: .9rem; min-height: 1.2rem; font-size: .95rem; }
+.message.error { color: #b00020; }
+.message.success { color: #0a7a11; }
+@media (max-width:600px) {
+  .login-container { margin: 3rem 1rem; padding: 1.25rem; }
+  .actions { flex-direction: column; gap: .5rem; }
+}
+header { height: 60px; }
+.logo { background: transparent; border: none; padding: 0; cursor: pointer; display: inline-block; }
+.logo img { width: 70px; height: auto; border-radius: 8px; box-shadow: 2px 2px 8px rgba(0,0,0,0.45); display: block; }
+.register-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 9999; }
+.register-modal.active { display: flex; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.modal-card { position: relative; background: #fff; width: 100%; max-width: 520px; padding: 1.25rem 1.5rem; border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2; }
+.modal-card h2 { margin: 0 0 0.75rem 0; text-align: left; }
+.modal-close { position: absolute; top: 10px; right: 12px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; }
+.register-modal .field { margin-bottom: .75rem; }
+.register-modal input { width: 100%; padding: .5rem .65rem; border-radius: 6px; border: 1px solid #ddd; }
+.register-modal .actions { display: flex; gap: .5rem; justify-content: flex-end; margin-top: .5rem; }
+.register-modal .btn-link { background: transparent; color: var(--text-dark); }
+.register-modal .message { min-height: 1.1rem; }
+@media (max-width:600px) {
+  .modal-card { margin: 0 12px; padding: 1rem; }
+}
+
