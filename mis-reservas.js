@@ -76,13 +76,12 @@ function renderPublicaciones(publicaciones) {
     const pubCont = document.getElementById('publicaciones-list');
     pubCont.innerHTML = '';
     
-    // Filtrar publicaciones activas (no completadas ni canceladas)
-    const activas = publicaciones.filter(a => a.status !== 'completado' && a.status !== 'cancelado');
-    if(activas.length === 0){
-        pubCont.innerHTML = '<p>No tienes publicaciones activas.</p>';
+    if(publicaciones.length === 0){
+        pubCont.innerHTML = '<p>No tienes publicaciones realizadas.</p>';
         return;
     }
-    activas.forEach((anuncio) => {
+    
+    publicaciones.forEach((anuncio) => {
         const div = document.createElement('div');
         div.className = 'anuncio-card';
         div.style = 'background:#fff;border-radius:8px;box-shadow:0 2px 8px #eee;padding:12px;margin-bottom:12px;display:flex;align-items:center;gap:12px;';
@@ -139,13 +138,12 @@ function renderReservas(reservas) {
     const resCont = document.getElementById('reservas-list');
     resCont.innerHTML = '';
     
-    // Filtrar reservas activas (no completadas ni canceladas)
-    const activas = reservas.filter(r => r.status !== 'completado' && r.status !== 'cancelado');
-    if(activas.length === 0){
-        resCont.innerHTML = '<p>No tienes reservas activas.</p>';
+    if(reservas.length === 0){
+        resCont.innerHTML = '<p>No tienes reservas realizadas.</p>';
         return;
     }
-    activas.forEach((reserva) => {
+    
+    reservas.forEach((reserva) => {
         // Obtener datos del vehículo desde items[0] o vehicle populate
         const item = reserva.items && reserva.items.length > 0 ? reserva.items[0] : {};
         const vehiculo = item.vehicle || {};
@@ -243,13 +241,12 @@ function renderVentas(ventas) {
     const ventasCont = document.getElementById('ventas-list');
     ventasCont.innerHTML = '';
     
-    // Filtrar ventas activas (no completadas ni canceladas)
-    const activas = ventas.filter(v => v.status !== 'completado' && v.status !== 'cancelado');
-    if(activas.length === 0){
-        ventasCont.innerHTML = '<p>No tienes ventas activas.</p>';
+    if(ventas.length === 0){
+        ventasCont.innerHTML = '<p>No has recibido órdenes de tus vehículos publicados.</p>';
         return;
     }
-    activas.forEach((venta) => {
+    
+    ventas.forEach((venta) => {
         // Obtener datos del vehículo y comprador
         const item = venta.items && venta.items.length > 0 ? venta.items[0] : {};
         const vehiculo = item.vehicle || {};

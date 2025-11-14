@@ -192,43 +192,16 @@
 }
 @media (max-width: 1024px) {
     .carrusel { 
-        display: flex;
         flex-wrap: nowrap; 
         justify-content: flex-start; 
         overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
         padding: 20px 15px;
         gap: 20px;
-        -webkit-overflow-scrolling: touch; /* Suaviza scroll en iOS */
     }
-    
-    /* Ocultar scrollbar pero mantener funcionalidad */
-    .carrusel::-webkit-scrollbar {
-        height: 8px;
-    }
-    
-    .carrusel::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px;
-    }
-    
-    .carrusel::-webkit-scrollbar-thumb {
-        background: #b22222;
-        border-radius: 10px;
-    }
-    
-    .carrusel::-webkit-scrollbar-thumb:hover {
-        background: #8b0000;
-    }
-    
     .cajas { 
         width: 280px; 
         min-width: 280px; 
-        height: 360px;
-        scroll-snap-align: start;
-        flex-shrink: 0;
+        height: 360px; 
     }
     .cajas .imgBox,
     .cajas .imgBox1,
@@ -249,205 +222,85 @@
 
 @media (max-width: 768px) {
     .carrusel {
-        padding: 20px 10px;
-        gap: 20px;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        /* Centrar la primera tarjeta */
-        padding-left: calc((100vw - 260px) / 2);
-        padding-right: calc((100vw - 260px) / 2);
+        padding: 15px 10px;
+        gap: 15px;
     }
-    
-    /* Scrollbar más pequeña en móvil */
-    .carrusel::-webkit-scrollbar {
-        height: 6px;
-    }
-    
     .cajas { 
         width: 260px; 
         min-width: 260px;
-        height: 360px;
-        scroll-snap-align: center;
-        box-shadow: 0 6px 20px rgba(178, 34, 34, 0.2);
+        height: 340px;
     }
-    
     .cajas .imgBox,
     .cajas .imgBox1,
     .cajas .imgBox2,
     .cajas .imgBox3,
     .cajas .imgBox4,
     .cajas .imgBox5 { 
-        height: 190px; 
+        height: 180px; 
     }
-    
     .cajas .contenido { 
-        height: 160px; 
+        height: 140px; 
     }
-    
-    .cajas .contenido .precio {
-        top: -70px;
-        height: 70px;
-        width: 55%;
-    }
-    
-    .cajas .contenido .precio h2 {
-        font-size: 0.95em;
-    }
-    
-    .cajas .contenido .info {
-        padding: 0 12px;
-        margin-top: 5px;
-    }
-    
     .cajas .contenido .info h3 {
-        font-size: 1.4em;
-        margin-bottom: 6px;
+        font-size: 1.5em;
     }
-    
     .cajas .contenido .info p {
-        font-size: 0.85em;
-        margin: 2px 0;
+        font-size: 0.9em;
     }
-    
     .cajas .contenido .card-actions {
-        gap: 10px;
+        gap: 8px;
         padding: 0 15px;
-        bottom: 15px;
     }
-    
     .cajas .contenido .card-actions button {
-        background: linear-gradient(90deg, #b22222 60%, #e74c3c 100%);
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        padding: 8px 12px;
-        font-size: 0.8em;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-weight: 700;
-        box-shadow: 0 3px 10px rgba(178,34,34,0.2);
-    }
-    
-    .cajas .contenido .card-actions button:hover {
-        background: linear-gradient(90deg, #e74c3c 60%, #b22222 100%);
-        transform: translateY(-1px);
-        box-shadow: 0 4px 14px rgba(178,34,34,0.3);
-    }
-    
-    .cajas .contenido .card-actions button.secondary {
-        background: #fff;
-        color: #b22222;
-        border: 2px solid #b22222;
-        font-weight: 700;
-        box-shadow: 0 2px 6px rgba(178,34,34,0.1);
-    }
-    
-    .cajas .contenido .card-actions button.secondary:hover {
-        background: #f8f8f8;
-        color: #e74c3c;
-        border-color: #e74c3c;
+        padding: 8px 14px;
+        font-size: 0.85em;
     }
 }
 
 @media (max-width: 480px) {
     .carrusel {
-        padding: 20px 5px;
-        gap: 15px;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        /* Centrar la primera tarjeta en pantallas pequeñas */
-        padding-left: calc((100vw - 240px) / 2);
-        padding-right: calc((100vw - 240px) / 2);
+        padding: 10px 5px;
+        gap: 12px;
     }
-    
-    /* Scrollbar muy pequeña en móviles pequeños */
-    .carrusel::-webkit-scrollbar {
-        height: 4px;
-    }
-    
     .cajas { 
         width: 240px; 
         min-width: 240px;
-        height: 340px;
-        scroll-snap-align: center;
-        box-shadow: 0 6px 18px rgba(178, 34, 34, 0.2);
+        height: 320px;
     }
-    
     .cajas .imgBox,
     .cajas .imgBox1,
     .cajas .imgBox2,
     .cajas .imgBox3,
     .cajas .imgBox4,
     .cajas .imgBox5 { 
-        height: 170px; 
-    }
-    
-    .cajas .contenido { 
         height: 160px; 
     }
-    
+    .cajas .contenido { 
+        height: 130px; 
+    }
     .cajas .contenido .precio {
-        width: 55%;
-        height: 65px;
-        top: -65px;
+        width: 60%;
+        height: 75px;
+        top: -75px;
     }
-    
     .cajas .contenido .precio h2 {
-        font-size: 0.9em;
-        padding: 0 8px;
+        font-size: 0.95em;
     }
-    
-    .cajas .contenido .info {
-        padding: 0 10px;
-        margin-top: 5px;
-    }
-    
     .cajas .contenido .info h3 {
         font-size: 1.3em;
-        margin-bottom: 5px;
+        margin-bottom: 6px;
     }
-    
     .cajas .contenido .info p {
-        font-size: 0.8em;
+        font-size: 0.85em;
         margin: 2px 0;
     }
-    
     .cajas .contenido .card-actions {
-        gap: 8px;
+        gap: 6px;
         padding: 0 12px;
-        bottom: 12px;
+        bottom: 14px;
     }
-    
     .cajas .contenido .card-actions button {
-        background: linear-gradient(90deg, #b22222 60%, #e74c3c 100%);
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        padding: 7px 10px;
-        font-size: 0.75em;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-weight: 700;
-        box-shadow: 0 2px 8px rgba(178,34,34,0.2);
-    }
-    
-    .cajas .contenido .card-actions button:hover {
-        background: linear-gradient(90deg, #e74c3c 60%, #b22222 100%);
-        transform: translateY(-1px);
-        box-shadow: 0 3px 10px rgba(178,34,34,0.3);
-    }
-    
-    .cajas .contenido .card-actions button.secondary {
-        background: #fff;
-        color: #b22222;
-        border: 2px solid #b22222;
-        font-weight: 700;
-        box-shadow: 0 2px 6px rgba(178,34,34,0.1);
-    }
-    
-    .cajas .contenido .card-actions button.secondary:hover {
-        background: #f8f8f8;
-        color: #e74c3c;
-        border-color: #e74c3c;
+        padding: 6px 10px;
+        font-size: 0.8em;
     }
 }

@@ -1,11 +1,11 @@
 
-window.API_URL = 'https://backend-2wn9.onrender.com';
+window.API_URL = 'http://127.0.0.1:5001';
 
 window.vehiculosAPI = [];
 
 
 // Global API URL
-window.API_URL = 'https://backend-2wn9.onrender.com';
+window.API_URL = 'http://127.0.0.1:5001';
 const API_URL = window.API_URL;
 
 // Global array for vehicles loaded from API
